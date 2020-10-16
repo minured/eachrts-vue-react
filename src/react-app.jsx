@@ -1,5 +1,7 @@
-import React, {useState, useRef} from "react"
+import React, {useState} from "react"
 import {ReactEcharts} from './react-echarts'
+
+// 函数组件
 export function ReactApp(){
   const [loading, setLoading] = useState(false)
   const [option, setOption] = useState({
@@ -28,7 +30,6 @@ export function ReactApp(){
   const loadMore = () => {
     if(loading){return}
     setLoading(true)
-    console.log('load')
     setTimeout(() => {
       setOption({
         xAxis: {
@@ -39,7 +40,7 @@ export function ReactApp(){
         }]
       })
       setLoading(false)
-    }, 2000)
+    }, 1000)
 
   }
   return (
